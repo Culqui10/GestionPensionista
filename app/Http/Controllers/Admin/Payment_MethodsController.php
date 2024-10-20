@@ -23,7 +23,6 @@ class Payment_MethodsController extends Controller
     public function create()
     {
         return view('admin.payment_methods.create');
-
     }
 
     /**
@@ -71,6 +70,9 @@ class Payment_MethodsController extends Controller
         // $paymeth->delete();
         // return redirect()->route('admin.payment_methods.index')->with('success', 'Eliminado');
         $paymeth = PaymentMethod::find($id);
+
+        // Depurar el ID que llega al método
+        //dd($id);
 
         if ($paymeth) {
             $paymeth->delete();

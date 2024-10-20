@@ -24,24 +24,26 @@
                 </thead>
                 <tbody>
                     @foreach ($payment_methods as $paymeth)
-                    <tr>
-                        <td>{{ $paymeth->id }}</td>
-                        <td>{{ $paymeth->name }}</td>
-                        <td>{{ $paymeth->description }}</td>
-                        <td>
-                            <button class="btnEditar btn btn-primary" id="{{ $paymeth->id }}"><i class="fa fa-edit"></i></button>
-                        </td>
-                        <td>
-                            <form action="{{ route('admin.payment_methods.destroy', $paymeth->id) }}" method="POST" class="fmrEliminar">
-                                @csrf
-                                @method('delete') 
-                                <button type="submit" class="btn btn-danger">
-                                    <i class="fa fa-trash"></i> 
-                                </button>
-                            </form>
-                            
-                        </td>
-                    </tr>
+                        <tr>
+                            <td>{{ $paymeth->id }}</td>
+                            <td>{{ $paymeth->name }}</td>
+                            <td>{{ $paymeth->description }}</td>
+                            <td>
+                                <button class="btnEditar btn btn-primary" id="{{ $paymeth->id }}"><i
+                                        class="fa fa-edit"></i></button>
+                            </td>
+                            <td>
+                                <form action="{{ route('admin.payment_methods.destroy', $paymeth->id) }}" method="POST"
+                                    class="fmrEliminar">
+                                    @csrf
+                                    @method('delete')
+                                    <button type="submit" class="btn btn-danger">
+                                        <i class="fa fa-trash"></i>
+                                    </button>
+                                </form>
+
+                            </td>
+                        </tr>
                     @endforeach
                 </tbody>
 
@@ -68,7 +70,7 @@
                 </div>
                 <div class="modal-footer">
                     <!--<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                  <button type="button" class="btn btn-primary">Save changes</button>-->
+                      <button type="button" class="btn btn-primary">Save changes</button>-->
                 </div>
             </div>
         </div>
@@ -110,20 +112,22 @@
         $(".fmrEliminar").submit(function(e) {
             e.preventDefault();
             Swal.fire({
-                title: "Seguro de eliminar?",
-                text: "Esta accion es irreversible!",
-                icon: "warning",
+                title: "¿Seguro que deseas eliminar?",
+                text: "Esta acción es irreversible.",
+                type: "warning", // Cambiado de 'icon' a 'type'
                 showCancelButton: true,
                 confirmButtonColor: "#3085d6",
                 cancelButtonColor: "#d33",
-                confirmButtonText: "Si, eliminar!"
+                confirmButtonText: "Sí, eliminar",
+                cancelButtonText: "Cancelar"
             }).then((result) => {
                 if (result.isConfirmed) {
-                    this.submit();
+                    form.submit(); // Enviar el formulario si se confirma la eliminación
                 }
             });
         });
     </script>
+
 
     @if (session('success') !== null)
         <script>

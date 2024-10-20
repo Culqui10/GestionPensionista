@@ -352,27 +352,42 @@ return [
         ],
         ['header' => 'REGISTROS ADICIONALES'],
         [
-            'text' => 'Registrar',
-            'icon' => 'fas fa-plus-circle',
-            'submenu' => [
-                [
-                    'text' => 'Tipo de comida',
-                    'route' => '',
-                    'icon' => 'fas fa-cookie-bite', 
-                ],
-                [
-                    'text' => 'Menú',
-                    'route' => '',
-                    'icon' => 'fas fa-hamburger', 
-                ],
-                [
-                    'text' => 'Método de pago',
-                    'route' => 'admin.payment_methods.index',
-                    'icon' => 'fab fa-stripe-s', 
-                ],
-                
-            ],
+            'text' => 'Tipo de comida',
+            'route' => '',
+            'icon' => 'fas fa-cookie-bite', 
         ],
+        [
+            'text' => 'Menú',
+            'route' => '',
+            'icon' => 'fas fa-hamburger', 
+        ],
+        [
+            'text' => 'Método de pago',
+            'route' => 'admin.payment_methods.index',
+            'icon' => 'fab fa-stripe-s', 
+        ],
+        // [
+        //     'text' => 'Registrar',
+        //     'icon' => 'fas fa-plus-circle',
+        //     'submenu' => [
+        //         [
+        //             'text' => 'Tipo de comida',
+        //             'route' => '',
+        //             'icon' => 'fas fa-cookie-bite', 
+        //         ],
+        //         [
+        //             'text' => 'Menú',
+        //             'route' => '',
+        //             'icon' => 'fas fa-hamburger', 
+        //         ],
+        //         [
+        //             'text' => 'Método de pago',
+        //             'route' => 'admin.payment_methods.index',
+        //             'icon' => 'fab fa-stripe-s', 
+        //         ],
+                
+        //     ],
+        // ],
         // [
         //     'text' => 'important',
         //     'icon_color' => 'red',
